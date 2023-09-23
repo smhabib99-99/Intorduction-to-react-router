@@ -1,4 +1,5 @@
-
+import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';  
 
 const User = ({user}) => {
 
@@ -16,8 +17,18 @@ const User = ({user}) => {
             <h1>{name}</h1>
             <p>phone: {phone}</p>
             <p>Email: {email}</p>
+            <Link to={`/user/${id}`}>Show Details</Link>
+            <Link to={`/user/${id}`}>
+                <button>Click Me</button>
+            </Link>
         </div>
     );
 };
+
+User.propTypes ={
+    user: PropTypes.object
+}
+
+
 
 export default User;
